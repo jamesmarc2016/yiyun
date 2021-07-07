@@ -131,7 +131,7 @@ async function getCourCanHistory(page,dateStart,dateEnd) {
                 "Cookie": cookie,
                 "Content-Type":"application/json;charset=utf-8",
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
@@ -193,7 +193,7 @@ async function getCourHistory(page,dateStart,dateEnd) {
                 "Cookie": cookie,
                 "Content-Type":"application/json;charset=utf-8",
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
@@ -258,7 +258,7 @@ async function subscribe(item,type) {
         }
 
         const options = {
-            "url": `https://mapp.easy-hi.com/m/api/yg/customer/SubscribeController/confirmQueue`,
+            "url": url,
             'body': `${JSON.stringify(body)}`,
             "headers": {
                 "Host":"mapp.easy-hi.com",
@@ -270,7 +270,7 @@ async function subscribe(item,type) {
                 "Cookie": cookie,
                 "Content-Type":"application/json;charset=utf-8",
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
@@ -321,7 +321,7 @@ async function getCoachInfos(item) {
                 "Cookie": cookie,
                 "Content-Type":"application/json;charset=utf-8",
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
@@ -383,7 +383,7 @@ async function getAllClass() {
                 "Cookie": cookie,
                 "Content-Type":"application/json;charset=utf-8",
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
@@ -430,7 +430,7 @@ async function getBaseInfo() {
                 "Connection": "keep-alive",
                 "Cookie": cookie,
                 "Referer": "https://mapp.easy-hi.com/m/2106739369/cust",
-                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+                "User-Agent": "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
             }
         }
         $.post(options, (err, resp, data) => {
