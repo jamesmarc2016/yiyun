@@ -9,7 +9,7 @@
 const $ = new Env('伊芸约课');
 const notify = $.isNode() ? require('./sendNotify') : '';
 
-let cookie = '',mainnaviId = '',schedulesList = [],isContinue=true,isContinueHis=true,isContinueCanHis=true,schedulesHisList = [];
+let cookie = '',courHistoryTimes = 1,courCanHistoryTimes = 1,mainnaviId = '',schedulesList = [],isContinue=true,isContinueHis=true,isContinueCanHis=true,schedulesHisList = [];
 if ($.isNode()) {
     if (process.env.YI_YUN_CK){
         cookie = process.env.YI_YUN_CK
@@ -139,6 +139,12 @@ async function getCourCanHistory(page,dateStart,dateEnd) {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`)
                     console.log(`${$.name} API请求失败，请检查网路重试`)
+                    //只能重试三次
+                    if(courCanHistoryTimes<=3){
+                        console.log("正准备重试")
+                        courCanHistoryTimes = courCanHistoryTimes + 1
+                        getCourCanHistory(page,dateStart,dateEnd)
+                    }
                 } else {
                     if (data) {
                         data = JSON.parse(data);
@@ -201,6 +207,12 @@ async function getCourHistory(page,dateStart,dateEnd) {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`)
                     console.log(`${$.name} API请求失败，请检查网路重试`)
+                    //只能重试三次
+                    if(courHistoryTimes<=3){
+                        console.log("正准备重试")
+                        courHistoryTimes = courHistoryTimes + 1
+                        getCourHistory(page,dateStart,dateEnd)
+                    }
                 } else {
                     if (data) {
                         data = JSON.parse(data);
